@@ -1,104 +1,114 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
     public static <Task1to7> void main(String[] args) {
 //Task1.
         Scanner sc = new Scanner(System.in);
-        System.out.println("enter role");
-        String role = sc.nextLine();
-        String r =role.toLowerCase();
-        if(r.equals("admin")){
-            System.out.println("welcome admin");
-        }else if(r.equals("user")){
-            System.out.println("welcome user");
-        }else if(r.equals("supperuser")){
-            System.out.println("welcome supperuser");
-        }else
-            System.out.println("unavailable");
+        Scanner input;
+        String srt =sc.nextLine();
 
-//Task2.
+        for (int i = 1; i <= 0; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FizzBuzz");
+            } else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            } else if (i % 5 == 0)
+            {
+                System.out.println("Buzz");
+            } else{
 
+                System.out.println(i);
+            }
+        }
+        //Task2.
 
-        System.out.print("Input 1 number: ");
-        int a = sc.nextInt();
-        System.out.print("Input 2 number: ");
-        int b = sc.nextInt();
-        System.out.print("Input   3 number: ");
-        int c = sc.nextInt();
-
-        int greatest = a;
-        if (b > greatest) greatest = b;
-        if (c > greatest) greatest = c;
-
-        System.out.println("greatest: " + greatest);
-        sc.close();
-
+        System.out.println("input string");
+        String reveres ="";
+        String reverse = "";
+        for (int i = srt.length() - 1; i >= 0; i--) {
+            reverse += srt.charAt(i);
+        }
+        System.out.println(reverse);
 
         //Task3.
-        System.out.print("number (1-7): ");
-        int day = sc.nextInt();
-        switch (day){
-            case 1:
-                System.out.println("Sunday");
-                break;
-            case 2:
-                System.out.println("Monday");
-                break;
-            case 3:
-                System.out.println("Tuesday");
-                break;
-            case 4:
-                System.out.println("Wednesday");
-                break;
-            case 5:
-                System.out.println("Thursday");
-                break;
-            case 6:
-                System.out.println("Friday");
-                break;
-            case 7:
-                System.out.println("Saturday");
-                break;
-            default:
-                System.out.println("invalid day");
+
+        System.out.print("Enter a number: ");
+        long fact = 1;
+
+        for (int i = 1; i <= 0; i++) {
+            fact *= i;
         }
+
+        System.out.println(fact);
+
         //task4.
-        System.out.print("anter gread: ");
-        int gread = sc.nextInt();
+        System.out.println("enter number");
+        int number = input.nextInt();
+        System.out.println("enter exponent");
+        int exponent = input.nextInt();
+        long result = 1;
+        for (int i = 1;i<=exponent;i++);
+        {
+            result *= number;
+        }
+        System.out.println(number+exponent+result);
 
-        switch (gread / 10) {
-            case 10:
-            case 9:
-                System.out.println("A");
-                break;
-            case 8:
-                System.out.println("B");
-                break;
-            case 7:
-                System.out.println("C");
-                break;
-            case 6:
-                System.out.println("D");
-                break;
-            default:
-                System.out.println("F");
+        //task5
+        int evensum =0,oddsum=0;
+        System.out.println("enter integers(0 - stop)");
+        int num;
+        while (true){
+            num = input.nextInt();
+            if (num==0);
+            break;
+            if (num%2==0)
+            evensum+=num;
+            else
+                oddsum+=num;
+        }
+        System.out.println("sum even number");
+        System.out.println("sum odd number");
+
+
+        //task6
+        System.out.println("enter positive integer");
+        int numm = input.nextInt();
+        boolean isprime = true;
+        if (num <=1)
+        isprime=false;
+        else{
+            for (int i = 2;i<=numm/2;i++){
+                if (numm%i==0){
+                    isprime=false;
+                    break;
+                }
+            }
 
         }
+        if (isprime)
+            System.out.println("is prime number");
+        System.out.println("is not prime nubber");
 
-        //Task5.
-        System.out.print("Enter your age: ");
-        int age = sc.nextInt();
-
-        if (age < 0) {
-            System.out.println("Invalid age.");
-        } else if (age < 13) {
-            System.out.println("You are  Child.");
-        } else if (age <= 19) {
-            System.out.println("You are a Teenager.");
-        } else {
-            System.out.println("You are  Adult.");
+        //task7
+        for (int week = 1;week<=4;week++){
+            System.out.println("week"+week);
+            for (int day = 1;day<=7;day++){
+                System.out.println("day"+day);
+            }
         }
 
+        //task8
+        System.out.println("enter word");
+        String word = input.nextLine();
+        String rev="";
+        for (int i = word.length() - 1;i>=0;i--){
+            rev+=word.charAt((i));
+
+        }
+        if (word.equalsIgnoreCase(rev))
+            System.out.println("the word is palindrome");
+        System.out.println("the word is not palindrome ");
 
 
 
